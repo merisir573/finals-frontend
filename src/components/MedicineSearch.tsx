@@ -28,7 +28,7 @@ function MedicineSearch({ onAdd, currentPage, setCurrentPage }: MedicineSearchPr
 
   const searchMedicine = async (page: number) => {
     try {
-      const response: AxiosResponse<SearchResponse> = await axios.get(`${GATEWAY_URL}/medicine/search`, {
+      const response: AxiosResponse<SearchResponse> = await axios.get(`${GATEWAY_URL}/medicine/v1/search`, {
         params: { 
           name: query, 
           page: page.toString(),  // Ensure page is passed as a string

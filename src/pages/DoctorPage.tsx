@@ -24,7 +24,7 @@ function DoctorPage() {
 
   const register = async () => {
     try {
-      await axios.post(`${GATEWAY_URL}/auth/register`, {
+      await axios.post(`${GATEWAY_URL}/auth/v1/register`, {
         username,
         password,
       });
@@ -37,7 +37,7 @@ function DoctorPage() {
 
   const login = async () => {
     try {
-      const response = await axios.post(`${GATEWAY_URL}/auth/login`, {
+      const response = await axios.post(`${GATEWAY_URL}/auth/v1/login`, {
         username,
         password,
       });
@@ -68,7 +68,7 @@ function DoctorPage() {
       });
   
       const response = await axios.post(
-        `${GATEWAY_URL}/doctor/create-prescription`,
+        `${GATEWAY_URL}/doctor/v1/create-prescription`,
         {
           prescriptionId,  // Pass the prescriptionId here
           patientTc: tc, 
